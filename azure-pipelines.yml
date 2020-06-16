@@ -28,3 +28,10 @@ steps:
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up --no-start'
+
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'Microsoft Azure(4ae9d620-765e-40a2-8cbe-8c6da5da4afa)'
+    appName: 'swmyshuttle2'
+    containers: 'myshuttledev'
+    multicontainerConfigFile: './'
